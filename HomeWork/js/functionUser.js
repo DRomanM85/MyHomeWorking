@@ -1,34 +1,103 @@
 //Retrieve the user's name
 function getUserName(messageForUser)
 {
-    let userName = prompt(messageForUser, 'YOUR NAME');
+    let userValue = null;
+    userValue = prompt(messageForUser, 'YOUR NAME');
+    
     try {
-        if(checkAnswerUser(userName)){
-            return userName;
+        if(checkAnswerUser(userValue)){
+            return userValue;
         }
         else
         {
-            if(userName === "YOUR NAME"){
-                getUserName('Напевно моя підказка спантеличила🤔 тебе. \nЗамість "YOUR NAME" впиши🖊️ своє і`мя.');
+            if(userValue === "YOUR NAME"){
+                userValue = getUserName('Напевно моя підказка спантеличила🤔 тебе. \nЗамість "YOUR NAME" впиши🖊️ своє і`мя.');
             }
-            else if(userName === ""){
-                getUserName('Упс😬!!! Якто сталося, ти забув🤷‍♂️ написати📝 своє імя.');
+            else if(userValue === ""){
+                userValue = getUserName('Упс😬!!! Якто сталося, ти забув🤷‍♂️ написати📝 своє імя.');
             }
             else
             {
                 return null;
             }
         }
+        return userValue;
     } catch (error) {
         console.error(error);
     }
     
 };
 
+//Get three values from the user
+function getUserValue(messageForUser)
+{
+    let userValue = null;
+    userValue = prompt(messageForUser);
+    try
+    {
+        if(checkAnswerUser(userValue)){
+            return userValue;
+        }
+        else
+        {
+            if(userValue === ""){
+                userValue = getUserValue('Яка прикристь😞, \nти відправив📬 порожній рядок🚫.');
+            }
+            else
+            {
+                return null;
+            }
+            
+        }
+        return userValue;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+//Get a number from the user
+function getUserNumber(messageForUser)
+{
+    let userValue = null;
+    userValue = prompt(messageForUser);
+    if(isFiveDigitNumber(userValue)){
+        return userValue;
+    }
+    else
+    {
+        userValue = getUserNumber('Яка прикристь😕, \nти відправив не🚫 число🔢 або не 5️⃣-ти значне.');
+    }
+    return userValue;
+}
+
+//Split the number into digits
+function parseFiveNumber(number)
+{
+    var numderArray = [];
+    var countDigits = Math.abs(number).toString().length;
+    console.log(countDigits)
+    var divider = parseInt("1"+"0".repeat(countDigits-1))
+    console.log(divider)
+    for (let index = 0; index < countDigits; index++) {
+        numderArray[index] = Math.floor((number / divider) % 10);
+        divider = divider/10;
+    }
+    return numderArray.join(', ');
+}
+
 //Validate the input
 function checkAnswerUser(userName)
 {
     return userName != null && userName != "" && userName != "YOUR NAME";
+};
+
+//Validate the input numder
+function isFiveDigitNumber(usernumber)
+{
+    if (!isNaN(usernumber)) {
+        return /^\d{5}$/.test(usernumber);
+    }
+    return false;
 };
 
 //Send a message
@@ -37,18 +106,6 @@ function sendMessageForUser(messageUser)
     alert(messageUser);
 };
 
-function getUserValue(messageForUser)
-{
-    var userValue = prompt(messageForUser);
-    if(checkAnswerUser(userValue)){
-        return userValue;
-    }
-    else
-    {
-        getUserValue('Яка прикристь, ти відправив порожній рядок.');
-    }
-    
-}
 
 function randomConcatenation(userArray) {
     const shuffledArray = userArray.sort(() => Math.random() - 0.5);
