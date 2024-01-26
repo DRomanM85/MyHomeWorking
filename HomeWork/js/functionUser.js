@@ -73,15 +73,8 @@ function getUserNumber(messageForUser)
 //Split the number into digits
 function parseFiveNumber(number)
 {
-    var numderArray = [];
-    var countDigits = Math.abs(number).toString().length;
-    console.log(countDigits)
-    var divider = parseInt("1"+"0".repeat(countDigits-1))
-    console.log(divider)
-    for (let index = 0; index < countDigits; index++) {
-        numderArray[index] = Math.floor((number / divider) % 10);
-        divider = divider/10;
-    }
+    let numderArray = String(number).split('').reverse();
+    
     return numderArray.join(' ');
 }
 
