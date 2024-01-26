@@ -187,7 +187,7 @@
             else{
                 return null;
             }
-            return parseFloat(userValue);
+            return userValue === null ? null : parseFloat(userValue);
         } catch (error) {
             console.error(error);
         }

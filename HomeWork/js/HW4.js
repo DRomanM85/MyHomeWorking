@@ -2,8 +2,9 @@ const DaysInHour = 24;
 const MinutesInHour = 60;
 const SecondsInHours = 3600;
 let finalResult = [];
-finalResult[1] = getUserHour('І на фінал🏁🚩 напиши напиши кількість години🕰️,\nа я порахую скільки це \nднів📆, хвилин⏰ і секунд⏱️.').toLocaleString('en-US', { useGrouping: false });
-if(finalResult[1] === null || typeof finalResult[1] === 'undefined'){
+finalResult[1] = getUserHour('І на фінал🏁🚩 напиши напиши кількість години🕰️,\nа я порахую скільки це \nднів📆, хвилин⏰ і секунд⏱️.');
+
+if(finalResult[1] === null || typeof finalResult[1] === 'NaN'){
     sendMessageForUser('Дуже прикро😞, що ти передумав🤷‍♂️!');
 }
 else
