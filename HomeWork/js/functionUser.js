@@ -82,7 +82,7 @@ function parseFiveNumber(number)
         numderArray[index] = Math.floor((number / divider) % 10);
         divider = divider/10;
     }
-    return numderArray.join(', ');
+    return numderArray.join(' ');
 }
 
 //Validate the input
