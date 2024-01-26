@@ -112,7 +112,6 @@
                 return userValue;
             }
             else{
-                console.log(userValue);
                 if(userValue !== null && typeof userValue !== 'undefined'){
                     userValue = getUserOperation('Я не гуру🧘‍♂️ математики, \nале ти точно написав не🙅‍♂️ математичну операцію. \nСпробуй знову');
                 }
@@ -170,6 +169,34 @@
 
 
 
+//#region TASK_4
+{
+    //Retrieve the user's Hour
+    function getUserHour(messageForUser) {
+        let userValue = null;
+        userValue = prompt(messageForUser);
+        try {
+            if(userValue !== null && typeof userValue !== 'undefined'){
+                if (isNumber(userValue) || parseFloat(userValue) > 0) {
+                    return parseFloat(userValue);
+                }
+                else{
+                    userValue = getUserHour('Яка халепа🤔! \nЦе, що завгоднo🤯, але точно не кількість годин. \nСпробуйте знову🔄😊');
+                }
+            }
+            else{
+                return null;
+            }
+            return parseFloat(userValue);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
+//#endregion
+
+
+
 //#region OtherMethods
 {
     //Validate the input operation
@@ -195,9 +222,10 @@
         const cleanedInput = number.replace(/\s/g, '');
         return !isNaN(parseFloat(cleanedInput)) && isFinite(cleanedInput);
     }
+
+
+    function numberToTriads(number){
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
 }
 //#endregion
-
-
-
-
