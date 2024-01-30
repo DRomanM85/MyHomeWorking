@@ -6,10 +6,63 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="js/functionUser.js"></script>
-    <script src="js/HW1.js"></script>
-    <script src="js/HW2.js"></script>
-    <script src="js/HW3.js"></script>
-    <script src="js/HW4.js"></script>
+    <!-- <script src="js/functionUser.js"></script> -->
+    <!-- <script src="js/HW1.js"></script> -->
+    <!-- <script src="js/HW2.js"></script> -->
+    <!-- <script src="js/HW3.js"></script> -->
+    <!-- <script src="js/HW4.js"></script> -->
+    <script src="Practice/js/TASK1.js"></script>
+
+    <!-- TASK1 -->
+    <h1>Порівняння чисел</h1>
+
+    <label for="number1">Введіть перше число:</label>
+    <input type="number" id="number1">
+
+    <br>
+
+    <label for="number2">Введіть друге число:</label>
+    <input type="number" id="number2">
+
+    <br>
+
+    <button onclick="compareNumbers()">Порівняти</button>
+
+    <p id="resultTask1"></p>
+
+    <!-- TASK2 -->
+    <h1>Порівняння відстаней</h1>
+    
+    <label for="distanceInFeet">Введіть відстань у футах:</label>
+    <input type="number" id="distanceInFeet">
+
+    <br>
+
+    <label for="distanceInKilometers">Введіть відстань у кілометрах:</label>
+    <input type="number" id="distanceInKilometers">
+
+    <br>
+
+    <button onclick="compareDistance()">Порівняти</button>
+    <button onclick="convertDistance()">Перевести</button>
+
+    <p id="resultTask2"></p>
+
+    <!-- TASK3 -->
+    <h1>Перевірка дільника</h1>
+    
+    <label for="numberOne">Введіть перше число:</label>
+    <input type="number" id="numberOne">
+
+    <br>
+
+    <label for="numberSecond">Введіть друге число:</label>
+    <input type="number" id="numberSecond">
+
+    <br>
+
+    <button onclick="clickButtonCheckIsDivisor()">Перевірити</button>
+
+    <p id="resultTask3"></p>
 </body>
 </html>
