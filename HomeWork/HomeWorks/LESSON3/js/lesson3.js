@@ -8,7 +8,6 @@ function printNumbersWithStep() {
         color = color === 'green' ? 'red' : 'green'
     }
 
-    // Виводимо результат на сторінку
     document.getElementById('resultTask1').innerHTML = resultMessage;
 }
 
@@ -21,7 +20,6 @@ function calculateExchangeRate() {
         resultMessage += `$${dollars} = ${inHryvnia} грн<br>`;
     }
 
-    // Виводимо результат на сторінку
     document.getElementById('resultTask2').innerHTML = resultMessage;
 }
 
