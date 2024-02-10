@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/lesson3.js"></script>
+
+
+    <!-- TASK1 -->
+    <h1>Вивести числа від 20 до 30 через пропуск, використовуючи крок 0,5</h1>
+        <button onclick="printNumbersWithStep()">ПОКАЗАТИ</button>
+        <p id="resultTask1"></p>
+
+
+    <!-- TASK2 -->
+    <h1>Курс долара</h1>
+        <button onclick="calculateExchangeRate()">ПОКАЗАТИ</button>
+            <p id="resultTask2"></p>
+
+
+    <!-- TASK3 -->
+    <h1>Вивести всі цілі числа від 1 до 100, квадрат яких не перевищує числа:</h1>
+        <label for="numberUser">Введіть число:</label>
+            <input type="number" id="numberUser">
+        <br>
+        <button onclick="printSquaresUpToN()">ПОКАЗАТИ</button>
+            <p id="resultTask3"></p>
+
+    
+    <!-- TASK4 -->
+    <h1>Перевірити чи число просте</h1>
+        <label for="numberPrime">Введіть число:</label>
+            <input type="number" id="numberPrime">
+        <br>
+        <button onclick="isPrimeNumber()">ПОКАЗАТИ</button>
+            <p id="resultTask4"></p>
+
+
+    <!-- TASK5 -->
+    <h1>Перевірити чи можна отримати число шляхом піднесення 3 до енного степеня</h1>
+        <label for="numberPowerThree">Введіть число:</label>
+            <input type="number" id="numberPowerThree">
+        <br>
+        <button onclick="isPowerOfThree()">ПОКАЗАТИ</button>
+            <p id="resultTask5"></p>
+
+        
+</body>
+</html>
