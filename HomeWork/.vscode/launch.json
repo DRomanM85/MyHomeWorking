@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "/Users/Roman/Documents/JS_PROJECT/MyHomeWorking/HomeWork/index2.html"
+            "file": "/Users/Roman/Documents/JS_PROJECT/MyHomeWorking/HomeWork/indexP2.html"
         }
     ]
 }
