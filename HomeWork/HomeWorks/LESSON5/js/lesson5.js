@@ -57,37 +57,71 @@ function findMaxElementAndIndex() {
 
 function countNegativeElements() {
     let negativeCount = 0;
-
+    let tempArray = [];
     for (let i = 0; i < myArray.length; i++) {
         if (myArray[i] < 0) {
             negativeCount++;
+            tempArray.push(myArray[i]);
         }
     }
-    displayPrint(`Кількість негативних елементів: ${negativeCount}`);
+    displayPrint(`Кількість негативних елементів: ${negativeCount} <br> ${tempArray.join(', ')}`);
 
 }
 
 function countOddPositiveElements() {
     let oddPositiveCount = 0;
-
+    let sumOddPositive = 0;
+    let tempArray = [];
     for (let i = 0; i < myArray.length; i++) {
         if (myArray[i] > 0 && myArray[i] % 2 !== 0) {
             oddPositiveCount++;
+            sumOddPositive += myArray[i];
+            tempArray.push(myArray[i]);
         }
     }
-    displayPrint(`Кількість непарних позитивних елементів: ${oddPositiveCount}`);
+    displayPrint(`Кількість непарних позитивних елементів: ${oddPositiveCount}<br> ${tempArray.join(', ')}  <br> Сума яких ${sumOddPositive}`);
 }
 
 function countEvenPositiveElements() {
     let evenPositiveCount = 0;
-
+    let sumEvenPositive = 0;
+    let tempArray = [];
     for (let i = 0; i < myArray.length; i++) {
         if (myArray[i] > 0 && myArray[i] % 2 === 0) {
             evenPositiveCount++;
+            tempArray.push(myArray[i]);
+            sumEvenPositive += myArray[i];
         }
     }
 
-    displayPrint(`Кількість парних позитивних елементів: ${evenPositiveCount}`);
+    displayPrint(`Кількість парних позитивних елементів: ${evenPositiveCount}<br> ${tempArray.join(', ')} <br> Сума яких ${sumEvenPositive}`);
+}
+
+function productOfPositiveElements() {
+    let productPositive = 1;
+    let productPositiveCount = 0;
+    let tempArray = [];
+    for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i] > 0) {
+            productPositive *= myArray[i];
+            tempArray.push(myArray[i]);
+            productPositiveCount++;
+        }
+    }
+    displayPrint(`Кількість позитивних елементів: ${productPositiveCount}<br> ${tempArray.join(', ')} <br> Добуток яких ${productPositive}`);
+}
+
+function findMaxElementAndZeroOthers() {
+    let maxElement = Math.max(...myArray);
+
+    for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i] !== maxElement) {
+            myArray[i] = 0;
+        }
+    }
+
+    displayPrint(`Найбільший елемент: ${maxElement}`);
+    printArray();
 }
 
 function displayPrint(message) {

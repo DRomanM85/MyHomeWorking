@@ -4,29 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <style>
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .button {
+            width: calc(33.33% - 10px);
+            padding: 10px;
+            background-color: grey;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
     <script src="js/lesson5.js"></script>
 
-
     <h1>Працюємо з Масивом</h1>
+    <button class="button" onclick="printArray(myArray)">ПОЧАТИ</button>
+    <p id="Array"></p>
+    <p id="resultFunc"></p>
+    <div class="button-container">
+        
+        <button class="button" onclick="findSumAndCountOfPositiveElements()">Порахувати та просумувати позитивні елементи</button>
+        <button class="button" onclick="findMinElementAndIndex()">Знайти мінімальний елемент</button>
 
-        <button onclick="printArray(myArray)">ПОЧАТИ</button>
-        <p id="Array"></p>
-        <p id="resultFunc"></p>
-        <button onclick="findSumAndCountOfPositiveElements()">Порахувати та просумувати позитивні елементи</button>
-        <br>
-        <button onclick="findMinElementAndIndex()">Знайти мінімальний елемент</button>
-        <br>
-        <button onclick="findMaxElementAndIndex()">Знайти максимальний елемент</button>
-        <br>
-        <button onclick="countNegativeElements()">Визначити кількість негативних елементів</button>
-        <br>
-        <button onclick="countOddPositiveElements()">Знайти кількість непарних позитивних елементів</button>
-        <br>
-        <button onclick="countEvenPositiveElements()">Знайти кількість парних позитивних елементів</button>
-        <br>
+        <button class="button" onclick="findMaxElementAndIndex()">Знайти максимальний елемент</button>
+        <button class="button" onclick="countNegativeElements()">Визначити кількість негативних елементів</button>
+        <button class="button" onclick="countOddPositiveElements()">Знайти кількість непарних позитивних елементів та їх суму</button>
 
+        <button class="button" onclick="countEvenPositiveElements()">Знайти кількість парних позитивних елементів та їх суму</button>
+        <button class="button" onclick="productOfPositiveElements()">Знайти добуток парних елементів</button>
+        <button class="button" onclick="findMaxElementAndZeroOthers()">Обнулити масив окрім максимального значення</button>
+    </div>
 </body>
 </html>
