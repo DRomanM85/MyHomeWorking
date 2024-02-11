@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Accounts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+        }
+
+        .user-card {
+            border: 4px solid #ccc;
+            border-radius: 15px;
+            padding: 16px;
+            width: 300px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-card.active {
+            border-color: #4CAF50;
+        }
+
+        .user-card.inactive {
+            border-color: #FF5722;
+        }
+
+        .user-card .content,
+        .user-card .info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+
+        .user-card .info {
+            display: none;
+            flex-direction: column;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fffb00;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .user-card:hover .content {
+            display: none;
+        }
+
+        .user-card:hover .info {
+            display: flex;
+        }
+
+        .total-info {
+            border-radius: 8px;
+            width: 100%;
+            height: 100px;
+            background-color:darkgray;
+            border-color: black;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 16px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .total-info div {
+            text-align: left;
+        }
+
+        .total-info div:nth-child(3) {
+            text-align: right;
+        }
+
+        #user-list-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .filter-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            height: 100px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .filter-button:hover {
+            background-color: #17541b;
+        }
+    </style>
+</head>
+<body>
+    <script src="TASK.js"></script>
+    <br>
+    <button onclick="filter()" class="filter-button">Задати мінімальний баланс</button>
+    <br>
+    <div id="user-list-container" class="user-list-container"></div>
+</body>
+</html>
