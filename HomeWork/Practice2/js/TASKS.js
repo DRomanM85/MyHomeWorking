@@ -12,11 +12,13 @@ function writeNumber() {
 }
 
 function writeSquareNumber() {
-    let resultMessange = ""
-    for (let i = 10; i <= 20; i++) {
+    let resultMessange = "";
+    let start = 10;
+    let end = 20;
+    for (let i = start; i <= end; i++) {
         resultMessange += (i * i);
 
-        if (i < 20) {
+        if (i < end) {
             resultMessange += ', ';
         }
     }
@@ -47,7 +49,12 @@ function multiplication7() {
 
 function sumNumber() {
     let n = 15;
-    let sum = (n * (n + 1)) / 2;
+    let sum = 0;
+
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+
     document.getElementById('resultTask4').innerHTML = `Сума чисел від 1 до 15: ${sum}`;
 }
 
