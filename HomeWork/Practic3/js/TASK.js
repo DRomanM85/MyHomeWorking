@@ -93,7 +93,9 @@ function getSum(users, isActive = undefined) {
 
     function filter(){
         let needBalanceStr = prompt('Задайте баланс для пошуку користувачів');
-        if(needBalanceStr === null){return;}
+        if(!needBalanceStr){
+            return;
+        }
         let needBalance = parseInt(needBalanceStr); 
         while(isNaN(needBalance)){
             needBalanceStr = prompt('Задайте баланс для пошуку користувачів')
