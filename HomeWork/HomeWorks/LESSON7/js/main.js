@@ -1,3 +1,5 @@
+let isUserInput;
+
 //#region TASK №1
 let randomArray = generateRandomDataTypesArray();
 displayArray(randomArray, "Початковий масив:");
@@ -23,7 +25,7 @@ if(!isNaN(numberOne)){
     }
 }
 
-let isUserInput = !isNaN(numberOne) && !isNaN(numberSecond) && operation !== null;
+isUserInput = !isNaN(numberOne) && !isNaN(numberSecond) && operation !== null;
 
 if(isUserInput){
     let result = doMath(numberOne, operation, numberSecond)
@@ -34,3 +36,33 @@ else{
 }
 //#endregion
 
+//#region TASK №3
+let lengthMainArray = parseFloat(getUserInput("ДАВАЙ ЗАПОВНИМО ДВОМІРНИЙ МАСИВ:\n Задайте довжину основного масиву", "isnumericPositive"));
+let lengthChildArrays = [];
+if(!isNaN(lengthMainArray)){
+    for(let i = 0; i < lengthMainArray; i++){
+        var lenght = parseFloat(getUserInput(`Задайте довжину ${i+1}-го підмасиву`, "isnumericPositive"));
+        if(!isNaN(lenght)){
+            lengthChildArrays.splice(i, 0, lenght);
+        }
+        else{
+            lengthChildArrays = [];
+        }
+    }
+}
+
+isUserInput = !isNaN(lengthMainArray) && lengthChildArrays.length > 0;
+
+if(isUserInput){
+    let userArray = setElementArray(lengthMainArray, lengthChildArrays);
+    if(userArray.length > 0){
+        displayArray(userArray, "ВАШ МАСИВ:");
+    }
+    else{
+        displayText(`Створення масиву скасовано користувачам`, `<h2>ВАШ МАСИВ:</h2>`)
+    }
+}
+else{
+    displayText(`Створення масиву скасовано користувачам`, `<h2>ВАШ МАСИВ:</h2>`)
+}
+//#endregion

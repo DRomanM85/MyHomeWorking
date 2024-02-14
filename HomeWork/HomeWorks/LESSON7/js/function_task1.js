@@ -91,17 +91,3 @@ function calculateNumericAverage(numericArray) {
       return null; 
     }
 }
-
-
-// Function to display an array in the document
-function displayArray(arr, heading) {
-    document.write(`<h2>${heading}</h2>`);
-    document.write("<pre>" + JSON.stringify(arr, null, 2) + "</pre><br>");
-}
-
-
-// Function to display an string in the document
-function displayText(textValue, heading) {
-    document.write(`<h2>${heading}</h2>`);
-    document.write("<pre>" + textValue + "</pre><br>");
-}
