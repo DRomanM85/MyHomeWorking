@@ -1,12 +1,12 @@
 // Function to display an array in the document
-function displayArray(arr, heading) {
+function displayArray(arr, heading = "") {
     document.write(`<h2>${heading}</h2>`);
     document.write("<pre>" + JSON.stringify(arr, null, 2) + "</pre><br>");
 }
 
 
 // Function to display an string in the document
-function displayText(textValue, heading) {
+function displayText(textValue, heading = "") {
     document.write(`<h2>${heading}</h2>`);
     document.write("<pre>" + textValue + "</pre><br>");
 }
@@ -19,7 +19,6 @@ function getUserInput(promptMessage, typeValidate = nulll, isValidate = true) {
     let userAnswe;
     do{
         userAnswe = prompt(errorMessage +"\n"+promptMessage);
-        console.log(userAnswe);
     }while(!validateUserInput(userAnswe, typeValidate) && isValidate);
 
     return userAnswe;

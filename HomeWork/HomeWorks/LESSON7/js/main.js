@@ -66,3 +66,23 @@ else{
     displayText(`Створення масиву скасовано користувачам`, `<h2>ВАШ МАСИВ:</h2>`)
 }
 //#endregion
+
+//#region TASK №4
+let startLine = getUserInput("Задайте рядок символів чи напишіть речення:", null, false);
+if(startLine){
+    symbolsInput = getUserInput(`Вкажіть, які символи прибрати (символи задайте через кому) \nваш рядок '${startLine}':`, null, false);
+    if(symbolsInput){
+       displayText(startLine, "Робота з рядком");
+       const symbolsToRemove = symbolsInput.split(',').map(symbol => symbol.trim());
+       displayArray(symbolsToRemove)
+       let newLine = deleteSymbolIsLine(startLine, symbolsToRemove)
+       displayText(newLine);
+    }
+    else{
+        displayText("Скасовано користувачем", "Робота з рядком");
+    }
+}
+else{
+    displayText("Скасовано користувачем", "Робота з рядкомк");
+}
+//#endregion
