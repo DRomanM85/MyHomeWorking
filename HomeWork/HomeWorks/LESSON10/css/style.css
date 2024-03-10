@@ -1,0 +1,8 @@
+.pswhint {
+  display: none; 
+}
+#textBoxPassword {
+  border-color: blueviolet;
+  background-color: black;
+  color: white; 
+}
