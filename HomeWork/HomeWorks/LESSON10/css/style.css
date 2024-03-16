@@ -6,3 +6,42 @@
   background-color: black;
   color: white; 
 }
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 3px double #333; /* Подвійна лінія на зовнішніх краях таблиці */
+}
+
+td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle; /* Вирівнювання тексту по вертикалі */
+}
+td:empty {
+  background-color: #ffffff; /* Фоновий колір пустої комірки */
+}
+
+#btnArea {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+input[type="button"] {
+  width: 30%; 
+  margin: 0; 
+}
+
+#clearBtn {
+  background-color: rgb(255, 108, 108);
+}
+
+#sequentialBtn {
+  background-color: rgb(255, 197, 39);
+}
+
+#randomBtn {
+  background-color: rgb(122, 190, 122);
+}
